@@ -1,10 +1,13 @@
-{
+import json
+
+# بيانات التحديثات
+updates_data = {
   "schema": 1,
   "feedbackUrl": "https://designhub-api.ahmedd-hamed97.workers.dev/api/feedback",
   "latest": {
     "version": "1.12.5",
     "url": "https://github.com/Design-Hub-AH/designhub-releases/releases/tag/v1.12.5",
-    "force": false,
+    "force": False,
     "notes": {
       "ar": "إصدار رسمي v1.12.5: نقل إعدادات الإضافة وتحديثاتها إلى خادم Design Hub الجديد. تحديث موقّع يتم تثبيته تلقائياً من داخل فوتوشوب.",
       "en": "Official release v1.12.5: moves panel config and updates to the new Design Hub server. Signed update installs automatically inside Photoshop."
@@ -179,7 +182,7 @@
           "en": "Fixed 25th character truncation by expanding input maxlength to 32"
         },
         {
-          "ar": "إظهار رسائل الخطأ والنجاح الفورية (Toast وتحديد الحقل) أسفل خانة الإدخال مباشرة",
+          "ar": "إظهار Messages الخطأ والنجاح الفورية (Toast وتحديد الحقل) أسفل خانة الإدخال مباشرة",
           "en": "Immediate visual error and success banners directly under the activation input"
         }
       ],
@@ -231,4 +234,11 @@
       }
     }
   ]
+}
+
+# تحويل البيانات إلى ملف JSON
+with open('updates.json', 'w', encoding='utf-8') as f:
+    json.dump(updates_data, f, ensure_ascii=False, indent=4)
+
+print("تم إنشاء ملف updates.json بنجاح!")
 }
